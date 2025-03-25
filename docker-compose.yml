@@ -1,0 +1,18 @@
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    network_mode: "host"
+    environment:
+      TZ: "America/Chicago"
+      WEBPASSWORD: "${PIHOLE_WEBPASSWORD:-changeme}"
+      DNSMASQ_LISTENING: "local"
+      PIHOLE_DNS_1: "1.1.1.1"
+      PIHOLE_DNS_2: "9.9.9.9"
+      DNSMASQ_USER: "root"  # <- ADD THIS
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq:/etc/dnsmasq.d'
+    cap_add:
+      - NET_ADMIN

@@ -1,0 +1,20 @@
+# Sensitive files and secrets
+.env
+setupVars.conf
+cli_pw
+*.pem
+*.crt
+*.key
+
+# Logs, backups, databases
+*.log
+*.bak
+*.db*
+pihole-backup.tar
+listsCache/
+config_backups/
+migration_backup*/
+
+# OS junk
+.DS_Store
+
