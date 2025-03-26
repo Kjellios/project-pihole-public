@@ -10,7 +10,7 @@ services:
       DNSMASQ_LISTENING: "local"
       PIHOLE_DNS_1: "1.1.1.1"
       PIHOLE_DNS_2: "9.9.9.9"
-      DNSMASQ_USER: "root"  # <- ADD THIS
+      DNSMASQ_USER: "root"
     volumes:
       - './etc-pihole:/etc/pihole'
       - './etc-dnsmasq:/etc/dnsmasq.d'
