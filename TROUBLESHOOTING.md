@@ -1,6 +1,6 @@
 # Troubleshooting Guide
 
-This guide outlines solutions for known issues when running **Pi-hole in Docker on a Raspberry Pi**.
+This guide outlines solutions for known issues when running Pi-hole in Docker on a Raspberry Pi.
 
 ---
 
@@ -126,7 +126,7 @@ To ensure the setting persists, update the configuration and explicitly define i
 
 ---
 
-### Step 4: Explicitly Set DNSMASQ_LISTENING in docker-compose.yml
+### Step 4: Explicitly Set DNSMASQ_LISTENING in `docker-compose.yml`
 
 Edit the `environment:` section in `docker-compose.yml`:
 
@@ -196,7 +196,7 @@ DNSMASQ_LISTENING=local
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This solution ensures Pi-hole retains the "Allow Only Local Requests" setting across container restarts and Raspberry Pi reboots. If the setting resets again, view logs with:
 
