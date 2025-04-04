@@ -147,7 +147,6 @@ nano docker-compose.yml
 ### 3. Add the Following Configuration
 
 ```yaml
-version: "3"
 services:
   pihole:
     container_name: pihole
