@@ -7,18 +7,15 @@ This guide documents every step required to set up Pi-hole inside Docker on a Ra
 ## Step 1: Install Raspberry Pi OS Lite on the SD Card
 
 ### 1. Download Raspberry Pi OS Lite (32-bit)
-
 - Obtain the image from the official Raspberry Pi website.
-- Choose "Raspberry Pi OS Lite (Legacy, 32-bit)" for best compatibility with the Raspberry Pi 3.
+- Choose **"Raspberry Pi OS Lite (Legacy, 32-bit)"** for best compatibility with the Raspberry Pi 3.
 
 ### 2. Flash the OS to an SD Card
-
 - Use Raspberry Pi Imager to write the image to a microSD card.
 - Select Raspberry Pi OS Lite (Legacy, 32-bit) as the operating system.
 - Choose the correct SD card.
 
 ### 3. Configure OS Customization Settings (Before Writing the Image)
-
 - Set Hostname: `pihole.local`
 - Set Username & Password:
   - Username: `user`
@@ -33,7 +30,6 @@ This guide documents every step required to set up Pi-hole inside Docker on a Ra
 - Did NOT configure Wi-Fi (used Ethernet for stability).
 
 ### 4. Flash OS to SD Card and Boot Raspberry Pi
-
 - Insert the microSD card into the Raspberry Pi 3.
 - Connect the Raspberry Pi to power and boot it up.
 - Use a wired Ethernet connection for stability.
@@ -218,7 +214,7 @@ hostname -I
 - LAN Settings:
   - Go to LAN → DHCP Server
   - Set DNS Server 1 to: `192.168.1.2`
-  - Set Advertise Router’s IP in addition to User Specified DNS to No
+  - Set Advertise Router’s IP in addition to User Specified DNS to **No**
   - Enable Manual Assignment and assign `192.168.1.2` to the Pi-hole device
 - Reboot Router to apply settings
 
@@ -233,24 +229,28 @@ hostname -I
 
 ### 2. Adjust Privacy Settings
 
-- Go to Settings → Privacy
+- Go to **Settings → Privacy**
 - Set DNS Resolver Privacy Level to:
-  High (Domains Display & Store All Domains is Hidden)
+  - **High** (Domains Display & Store All Domains is Hidden)
 
 ### 3. Adjust DNS Settings
 
-- Go to Settings → DNS
+- Go to **Settings → DNS**
 - Change Interface Settings to:
-  Listen only on interface eth0 _(or leave as "all" depending on setup)_
+  - Listen only on interface `eth0` *(or leave as "all" depending on setup)*
 
 ---
 
-## ✅ Pi-hole Setup Successfully Completed
+## Pi-hole Setup Successfully Completed
 
 Pi-hole is now fully operational inside Docker on a Raspberry Pi 3 and acting as a network-wide DNS sinkhole with persistent configuration and secure access.
 
 ---
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
-If you encounter issues, check the [Troubleshooting Guide](TROUBLESHOOTING.md) (if you've created one), or use the `docker logs pihole` command to view live logs.
+If you encounter issues, check the [Troubleshooting Guide](TROUBLESHOOTING.md) (if you've created one), or use the following command to view logs:
+
+```sh
+docker logs pihole
+```
